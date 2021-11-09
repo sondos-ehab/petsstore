@@ -1,0 +1,304 @@
+{
+	"info": {
+		"_postman_id": "a46a107a-4004-4cc8-a6fe-d1c4c626b79e",
+		"name": "TestProTask",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getUserDetails",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"profile get successfully\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/israa%20sami",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"israa%20sami"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "userLogin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"login is done succesfully\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "israa",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "tester123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/login",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateUser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"user is updated succes\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 0,\r\n  \"username\": \"israa sami\",\r\n  \"firstName\": \"israa\",\r\n  \"lastName\": \"sami\",\r\n  \"email\": \"israasami@gmail.com\",\r\n  \"password\": \"tester123\",\r\n  \"phone\": \"01021181524\",\r\n  \"userStatus\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/israa%20sami",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"israa%20sami"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteUser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{baseUrl}}/israa",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"israa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"user is logged out\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/logout",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createUser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"adding user done successsfully\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 10,\r\n  \"username\": \"noha\",\r\n  \"firstName\": \"noha\",\r\n  \"lastName\": \"mohamed\",\r\n  \"email\": \"noha@gmail.com\",\r\n  \"password\": \"tester123\",\r\n  \"phone\": \"01114529677\",\r\n  \"userStatus\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}",
+					"host": [
+						"{{baseUrl}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createWithArray",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"users is added successfully\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n  {\r\n    \"id\": 11,\r\n    \"username\": \"hadeer\",\r\n    \"firstName\": \"hadeer\",\r\n    \"lastName\": \"ahmed\",\r\n    \"email\": \"hadeer@gmail.com\",\r\n    \"password\": \"tester123\",\r\n    \"phone\": \"01117895644\",\r\n    \"userStatus\": 0\r\n  },\r\n   {\r\n    \"id\": 15,\r\n    \"username\": \"gehad\",\r\n    \"firstName\": \"gehad\",\r\n    \"lastName\": \"mahmoud\",\r\n    \"email\": \"gehad@gmail.com\",\r\n    \"password\": \"tester123\",\r\n    \"phone\": \"01021181524\",\r\n    \"userStatus\": 0\r\n  }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/createWithArray",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"createWithArray"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createWithList",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"users added successfully\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n  {\r\n    \"id\": 11,\r\n    \"username\": \"hadeer\",\r\n    \"firstName\": \"hadeer\",\r\n    \"lastName\": \"ahmed\",\r\n    \"email\": \"hadeer@gmail.com\",\r\n    \"password\": \"tester123\",\r\n    \"phone\": \"01117895644\",\r\n    \"userStatus\": 0\r\n  },\r\n   {\r\n    \"id\": 15,\r\n    \"username\": \"gehad\",\r\n    \"firstName\": \"gehad\",\r\n    \"lastName\": \"mahmoud\",\r\n    \"email\": \"gehad@gmail.com\",\r\n    \"password\": \"tester123\",\r\n    \"phone\": \"01021181524\",\r\n    \"userStatus\": 0\r\n  }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/createWithList",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"createWithList"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
